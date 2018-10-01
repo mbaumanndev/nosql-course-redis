@@ -60,7 +60,7 @@ Notre projet nécéssite le lancement de plusieurs conteneurs :
 
 Docker nous permet de définir des dépendance entre nos conteneurs, ainsi, nos conteneur PHP et notre conteneur redis CLI dépendent tout deux du conteneur redis SGBD.
 
-Afin de lancer notre enviroenement de développement, nous devons éxécuter la commande suivante :
+Afin de lancer notre environement de développement, nous devons éxécuter la commande suivante :
 
 ```sh
 docker-compose up -d

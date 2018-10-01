@@ -32,16 +32,4 @@ services:
     depends_on:
       - redis
     ports:
-      - "80:80"
-
-  # php1:
-  #   restart: 'no'
-  #   image: monphp
-  #   build:
-  #     context: .
-  #     dockerfile: Dockerfile
-  #   depends_on:
-  #     - redis
-  #   command: "php -S 0.0.0.0:8000 -t app /app/app/Public/index.php"
-  #   ports:
-  #     - "8000:8000"
+      - "8081:80"
