@@ -1,0 +1,7 @@
+repos:
+- repo: https://github.com/thlorenz/doctoc
+  sha: v1.3.1
+  hooks:
+    - id: doctoc
+      files: README.md
+      args: [--github, --notitle]

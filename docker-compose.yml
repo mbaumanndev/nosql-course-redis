@@ -1,0 +1,47 @@
+version: '3.4'
+
+services:
+  redis:
+    restart: 'no'
+    image: redis:latest
+    command: --loglevel verbose
+
+  rcli:
+    restart: 'no'
+    image: redis:latest
+    depends_on:
+      - redis
+    command: >
+      sh -c 'redis-cli -h redis '
+
+  readis:
+    restart: 'no'
+    image: hollodotme/readis
+    ports:
+      - 8080:80
+    volumes:
+      - ./config:/code/config:ro
+    depends_on:
+      - redis
+
+  phpredisadmin:
+    image: erikdubbelboer/phpredisadmin
+    environment:
+      - REDIS_1_HOST=redis
+      - REDIS_1_PORT=6379
+    depends_on:
+      - redis
+    ports:
+      - "80:80"
+
+  # php1:
+  #   restart: 'no'
+  #   image: monphp
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile
+  #   depends_on:
+  #     - redis
+  #   command: "php -S 0.0.0.0:8000 -t app /app/app/Public/index.php"
+  #   ports:
+  #     - "8000:8000"
