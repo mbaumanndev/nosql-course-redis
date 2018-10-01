@@ -296,7 +296,7 @@ redis:6379> HGETALL bestiaire
 > En utilisant les commandes relatives aux hashs, créez les dictionnaires suivants :
 > - Un dictionnaire user:2 contenant le nom "Dupont", le prénom "Etienne", un âge à 23
 > - Un dictionnaire user:3 contenant le nom "Dupond", le prénom "Charles", un âge à 21
-> - `HMSET ordis hp1 "HP Pavillon" hp2 "HP Stream" hp3 "HP ENVY" asus1 "Vivobook" asus2 "Chromebook" asus3 "Zenbook"`
+> - `HMSET ordis hp:pavillon "HP Pavillon" hp:stream "HP Stream" hp:envy "HP ENVY" asus:vivo "Vivobook" asus:chrome "Chromebook" asus:zen "Zenbook"`
 >
 > C'est l'anniversaire de notre user:2, à l'aide de [la documentation](https://redis.io/commands#hash), ajoutez lui un an.
 >
