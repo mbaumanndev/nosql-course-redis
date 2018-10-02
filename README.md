@@ -379,8 +379,99 @@ redis:6379> LRANGE liste 0 -1
 
 ### Les sets
 
-Nous verrons cette partie à la prochaine séance, patience !
+Comme pour les listes, les sets permettent de stocker plusieurs valeurs. La différence entre les listes et les sets réside dans le fait que les sets répondent à la théorie des ensembles. Comme pour les types précédents, la documentation détaille [les commandes disponibles](https://redis.io/commands#set).
+
+Nous allons retrouver les classiques commandes d'ajout, suppression, consultation et comptage d'éléments. (Note : Les éléments de sets sont appelés "membres")
+
+```shell
+redis:6379> SADD nombrespremiers 2 3 5 7 11 13 17 19 23
+(integer) 9
+redis:6379> SREM nombrespremiers 23
+(integer) 1
+redis:6379> SMEMBERS nombrespremiers
+1) "2"
+2) "3"
+3) "5"
+4) "7"
+5) "11"
+6) "13"
+7) "17"
+8) "19"
+redis:6379> SCARD nombrespremiers
+(integer) 8
+```
+
+La commande `SISMEMEBER` permet de déterminer si une valeur est inclue dans un set.
+
+```shell
+redis:6379> SADD nombrespremiers 2 3 5 7 11 13 17 19 23
+(integer) 9
+edis:6379> SISMEMBER nombrespremiers 3
+(integer) 1
+redis:6379> SISMEMBER nombrespremiers 12
+(integer) 0
+```
+
+La commande `SDIFF` permet de soustraire plusieurs sets.
+
+```shell
+redis:6379> SADD chiffres 1 2 3 4 5 6 7 8 9
+(integer) 9
+redis:6379> SADD chiffrespairs 2 4 6 8
+(integer) 4
+redis:6379> SDIFF chiffres chiffrespairs
+1) "1"
+2) "3"
+3) "5"
+4) "7"
+5) "9"
+```
+
+La commande `SINTER` permet de faire l'intersection de deux sets.
+
+```shell
+redis:6379> SADD chiffres 1 2 3 4 5 6 7 8 9
+(integer) 9
+redis:6379> SADD chiffrespairs 2 4 6 8
+(integer) 4
+redis:6379> SINTER chiffres chiffrespairs
+1) "2"
+2) "4"
+3) "6"
+4) "8"
+```
+
+La commande `SUNION` permet d'additionner deux sets.
+
+```shell
+redis:6379> SADD chiffrespairs 2 4 6 8
+(integer) 4
+redis:6379> SADD premierschiffres 1 2 3 4 5
+(integer) 5
+redis:6379> SUNION chiffrespairs premierschiffres
+1) "1"
+2) "2"
+3) "3"
+4) "4"
+5) "5"
+6) "6"
+7) "8"
+```
+
+> À vous de jouer !
+>
+> Antoine et Thomas organisent une soirée.
+>
+> Antoine veut inviter : Sophie, Etienne, Hélène, Paul, Charles, Ethan et Pauline
+>
+> Thomas lui souhaite inviter : Etienne, Paul, Catherine, Ethan, Pauline, Sophia et Mickaël
+>
+> Ayant un espace limités, ils souhaitenant inviter uniquement leurs amis communs. Qui sont-ils ?
+>
+> La semaine suivante, ils souhaitent organiser une soirée avec les personnes qui n'ont pas été invité à la première. À l'aide de la documentation, établissez une liste des invités d'Antoine et une liste des invités de Thomas dans de nouveaux sets.
+>
+> Quelle-est la liste finale des invités pour cette seconde soirée ? Une fois établie, exportez-là dans un nouveau set avec l'aide de la documentation.
 
 ### Opérations sur les clés
 
-Nous verrons cette partie à la prochaine séance, patience !
+Wait and see...
