@@ -474,8 +474,6 @@ redis:6379> SUNION chiffrespairs premierschiffres
 
 ### Opérations sur les clés
 
-Wait and see...
-
 Il existe plusieurs opérations de base que l'on peut éxécuter sur les différentes clés. Ces opérations sont détaillées [dans la documentation](https://redis.io/commands#generic).
 
 > À vous de jouer !
