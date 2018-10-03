@@ -475,3 +475,29 @@ redis:6379> SUNION chiffrespairs premierschiffres
 ### Opérations sur les clés
 
 Wait and see...
+
+Il existe plusieurs opérations de base que l'on peut éxécuter sur les différentes clés. Ces opérations sont détaillées [dans la documentation](https://redis.io/commands#generic).
+
+> À vous de jouer !
+>
+> Afin de vous préparer au TP noté qui aura lieu après la moitié du module, voici un exercice avec des conditions qui y sont similaires.
+>
+> Arrêtez votre infrastructure avec la commande `docker-compose down` et relancez la avec `docker-compose up -d` afin de repartir d'une base propre.
+>
+> En travaillant à 1, 2 ou 3, vous saisirez vos réponses dans un document texte, du format de votre choix (texte simple, markdown, word, open office, pdf, ...), comportant vos noms, et avant chaque réponse, une ligne faisant référence au numéro de la question à laquelle vous répondez avec la format suivant : `#1` pour la question 1 par exemple.
+>
+> Si la réponse nécéssite plusieurs commandes, séparez-les par un simple retour à la ligne.
+>
+> Question 1 : Définissez une clé "visits:omePge" avec une valeur à 10. Renomez ensuite cette clé à "visits:homePage".
+>
+> Question 2 : Créez une liste "nombres" contenant les valeurs suivantes : 3 47 28 19 64 29. Triez la liste par odre décroissant et stockez le résultat dans une nouvelle liste "inverse".
+>
+> Question 3 : Déplacez la liste "nombres" sur la seconde base redis.
+>
+> Question 4 : Restaurez la valeur suivante dans une clé "paroles" avec un time to live de 10 minutes : `"\x00@HArgent j't'aurai avec ta couleur bizarre Sans qu'j'ai \xc3\xa0 faire le canard\b\x00]^\xc2\x80\xabk\xf3i"`. Maintenant, persistez la clé.
+>
+> Question 5 : Restaurez la valeur suivante dans une clé "suite" sans time to live : `"\x0e\x01;;\x00\x00\x007\x00\x00\x00\x14\x00\x00\xf2\x02\xf3\x02\xf4\x02\xf5\x02\xf6\x02\xf7\x02\xf8\x02\xf9\x02\xfa\x02\xfb\x02\xfc\x02\xfd\x02\xfe\r\x03\xfe\x0e\x03\xfe\x0f\x03\xfe\x10\x03\xfe\x11\x03\xfe\x12\x03\xfe\x13\x03\xfe\x14\xff\b\x00\xab\xf1\xaal\x90\\|\xd6"`. Déterminez son type.
+>
+> Question 6 : Récupérez les clés contenant la lettre `a`.
+>
+> Question 7 : Récupérez le temps de dernier accès à la clé "nombre". Réinitialisez ce temps sans lire ou écrire dans la clé.
