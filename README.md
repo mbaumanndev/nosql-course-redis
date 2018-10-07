@@ -498,4 +498,11 @@ Il existe plusieurs opérations de base que l'on peut éxécuter sur les différ
 >
 > Question 6 : Récupérez les clés contenant la lettre `a`.
 >
-> Question 7 : Récupérez le temps de dernier accès à la clé "nombre". Réinitialisez ce temps sans lire ou écrire dans la clé.
+> Question 7 : Récupérez le temps de dernier accès à la clé "nombres". Réinitialisez ce temps sans lire ou écrire dans la clé.
+
+Pour aller plus loin
+--------------------
+
+Nous avons étudié les bases de Redis au cours de ce TP. Ceci nous a permis d'apprendre à utiliser un SGBD NoSQL orienté clé-valeur. Il existe d'autres SGBD NoSQL avec une orientation similaire, les plus connus sont [Riak](http://basho.com/products/) et [Dynamo](https://aws.amazon.com/fr/dynamodb/) (disponible en tant que service cloud Amazon).
+
+Pour aller plus loin sur Redis, la page [documentation](https://redis.io/documentation) contient de nombreux liens vers des sujets divers, comme le pub/sub, le scripting en Lua, l'installation de modules complémentaires, la sécurisation de votre redis, la mise en place de cluster, etc.
